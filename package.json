@@ -1,0 +1,23 @@
+{
+  "name": "matriculas-sul",
+  "version": "1.0.0",
+  "description": "Análise de matrículas em cursos de graduação na Região Sul do Brasil — projeto único (MVC + Repository), servidor Express que expõe a API e serve as Views",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:schema": "node scripts/aplicar-schema.js",
+    "db:import": "node scripts/importar-csv-copy.js",
+    "db:import:legacy": "node scripts/importar-csv.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "pg-copy-streams": "^7.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
