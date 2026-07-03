@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matrículas na Graduação — Região Sul do Brasil</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+
+<body>
+  <header class="topo">
+    <div class="topo-conteudo">
+      <h1>Matrículas na Graduação — Região Sul</h1>
+      <p>Paraná · Santa Catarina · Rio Grande do Sul — Censo da Educação Superior (2009–2023)</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- 1) Total por ano -->
+    <section class="card card-largo">
+      <div class="card-cabecalho">
+        <h2>Total de alunos matriculados por ano</h2>
+        <div class="filtros">
+          <label for="filtroTotalModalidade">Modalidade:</label>
+          <select id="filtroTotalModalidade">
+            <option value="todos">Todos</option>
+            <option value="EaD">EaD</option>
+            <option value="Presencial">Presencial</option>
+          </select>
+        </div>
+      </div>
+      <div class="grafico grafico-alto"><canvas id="chartTotalAno"></canvas></div>
+    </section>
+
+    <!-- 2/3) Ranking de cursos 2023 -->
+    <div class="grade-2">
+      <section class="card">
+        <div class="card-cabecalho">
+          <h2>Top 10 cursos Presenciais (2023)</h2>
+        </div>
+        <div class="grafico"><canvas id="chartCursosPresencial"></canvas></div>
+      </section>
+      <section class="card">
+        <div class="card-cabecalho">
+          <h2>Top 10 cursos EaD (2023)</h2>
+        </div>
+        <div class="grafico"><canvas id="chartCursosEad"></canvas></div>
+      </section>
+    </div>
+
+    <!-- 4/5) Ranking de IES 2023 -->
+    <div class="grade-2">
+      <section class="card">
+        <div class="card-cabecalho">
+          <h2>Top 10 IES — Presencial (2023)</h2>
+          <div class="filtros">
+            <label for="filtroIesPresencial">Categoria:</label>
+            <select id="filtroIesPresencial">
+              <option value="todas">Todas</option>
+              <option value="Pública">Públicas</option>
+              <option value="Privada">Privadas</option>
+            </select>
+          </div>
+        </div>
+        <div class="grafico"><canvas id="chartIesPresencial"></canvas></div>
+      </section>
+      <section class="card">
+        <div class="card-cabecalho">
+          <h2>Top 10 IES — EaD (2023)</h2>
+          <div class="filtros">
+            <label for="filtroIesEad">Categoria:</label>
+            <select id="filtroIesEad">
+              <option value="todas">Todas</option>
+              <option value="Pública">Públicas</option>
+              <option value="Privada">Privadas</option>
+            </select>
+          </div>
+        </div>
+        <div class="grafico"><canvas id="chartIesEad"></canvas></div>
+      </section>
+    </div>
+
+    <!-- 6) Linha do tempo de um curso -->
+    <section class="card card-largo">
+      <div class="card-cabecalho">
+        <h2>Linha do tempo de um curso</h2>
+        <div class="filtros">
+          <label for="selectCurso">Curso:</label>
+          <select id="selectCurso" class="select-largo">
+            <option value="">Carregando…</option>
+          </select>
+          <label for="filtroLinhaModalidade">Modalidade:</label>
+          <select id="filtroLinhaModalidade">
+            <option value="todos">Todos</option>
+            <option value="EaD">EaD</option>
+            <option value="Presencial">Presencial</option>
+          </select>
+        </div>
+      </div>
+      <div class="grafico grafico-alto"><canvas id="chartLinhaTempo"></canvas></div>
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Fonte: Censo da Educação Superior — Ministério da Educação · Arquitetura MVC + Repository · Node.js + PostgreSQL
+      (Supabase)</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+
+</html>
