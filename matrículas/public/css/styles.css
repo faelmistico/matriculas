@@ -1,0 +1,148 @@
+:root {
+  --bg: #f1f5f9;
+  --card: #ffffff;
+  --texto: #0f172a;
+  --texto-suave: #64748b;
+  --primaria: #2563eb;
+  --borda: #e2e8f0;
+  --sombra: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+/* Cabeçalho */
+.topo {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+  color: #fff;
+  padding: 2rem 1.5rem;
+  box-shadow: var(--sombra);
+}
+
+.topo-conteudo {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.topo h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.topo p {
+  opacity: 0.85;
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.grade-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 860px) {
+  .grade-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--borda);
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: var(--sombra);
+}
+
+.card-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-cabecalho h2 {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.filtros label {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  font-weight: 500;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--texto);
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+
+select:hover {
+  border-color: var(--primaria);
+}
+
+select:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.35);
+  border-color: var(--primaria);
+}
+
+.select-largo {
+  min-width: 260px;
+  max-width: 340px;
+}
+
+/* Gráficos */
+.grafico {
+  position: relative;
+  height: 340px;
+}
+
+.grafico-alto {
+  height: 400px;
+}
+
+/* Rodapé */
+.rodape {
+  text-align: center;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  padding: 2rem 1rem;
+}
